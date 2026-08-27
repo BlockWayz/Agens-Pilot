@@ -64,7 +64,7 @@ agent stacks**, so the model and the harness are tuned together:
 
 | Harness | What it is | Status |
 |---|---|---|
-| **Claway** | Blockway's **Team-AI workforce** — autonomous AI teammates that plan, use tools, and collaborate on knowledge and operations tasks. | **Live** |
+| **[Claway](https://claway.io)** | Blockway's **Team-AI workforce** — autonomous AI teammates that plan, use tools, and collaborate on knowledge and operations tasks. | **Live** |
 | **Codeway** | Blockway's **coding agent** — repo-scale understanding, edit-and-verify loops, and agentic software delivery. | **Opening soon** 🚀 |
 
 Because Agens is trained and evaluated against these harnesses' real workloads — long context,
