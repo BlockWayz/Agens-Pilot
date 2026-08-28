@@ -36,6 +36,13 @@ tags:
   <img src="https://img.shields.io/badge/Builds-BF16%20%7C%20FP8%20%7C%20INT4-475569">
 </p>
 
+<p align="center">
+  🤗 <b>Weights on Hugging Face:</b>
+  <a href="https://huggingface.co/Blockway/Agens-Pilot-30B">BF16</a> ·
+  <a href="https://huggingface.co/Blockway/Agens-Pilot-30B-FP8">FP8</a> ·
+  <a href="https://huggingface.co/Blockway/Agens-Pilot-30B-Int4">INT4</a>
+</p>
+
 ---
 
 ## Meet Agens Pilot 30B
