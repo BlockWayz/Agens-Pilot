@@ -134,6 +134,10 @@ weights are quantized.
 > GGUF / Ollama / llama.cpp are **not** available yet: the hybrid architecture isn't supported
 > by upstream llama.cpp. The INT4 build is the smallest usable form today.
 
+> **On the reported "model size":** Hugging Face auto-detects the **INT4** build as ~11B. That's a
+> counting artifact — packed 4-bit weights are stored 8-per-int32, so the widget under-counts them.
+> All three builds are the **same ~27B model**; only the weight precision differs.
+
 ---
 
 ## Serving
