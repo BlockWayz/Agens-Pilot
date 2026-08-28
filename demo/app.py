@@ -1,10 +1,10 @@
-"""Gradio chat demo for Agens Pilot 30B — calls an OpenAI-compatible endpoint.
+"""Gradio chat demo for Agens Pilot — calls an OpenAI-compatible endpoint.
 
 Deploy on a Hugging Face Space (Gradio SDK, needs PRO) or run locally.
 Set these as Space *secrets* / env vars — never hard-code them:
   AGENS_BASE_URL   e.g. http://<host>:11116/v1
   AGENS_API_KEY    your endpoint key
-  AGENS_MODEL      served model name (default "Agens Pilot 30B")
+  AGENS_MODEL      served model name (default "Agens Pilot")
 """
 import os
 import gradio as gr
@@ -14,7 +14,7 @@ client = OpenAI(
     base_url=os.environ.get("AGENS_BASE_URL", "http://localhost:8000/v1"),
     api_key=os.environ.get("AGENS_API_KEY", "EMPTY"),
 )
-MODEL = os.environ.get("AGENS_MODEL", "Agens Pilot 30B")
+MODEL = os.environ.get("AGENS_MODEL", "Agens Pilot")
 
 
 def respond(message, history):
@@ -35,7 +35,7 @@ def respond(message, history):
 demo = gr.ChatInterface(
     respond,
     type="messages",
-    title="Agens Pilot 30B",
+    title="Agens Pilot",
     description="Blockway's flagship open multimodal coding LLM — 1M context, Apache-2.0. "
                 "Weights: https://huggingface.co/Blockway",
     examples=[

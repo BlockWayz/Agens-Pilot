@@ -1,5 +1,5 @@
 ---
-title: Agens Pilot 30B
+title: Agens Pilot
 emoji: 🔷
 colorFrom: blue
 colorTo: pink
@@ -9,9 +9,9 @@ pinned: false
 license: apache-2.0
 ---
 
-# Agens Pilot 30B — chat demo
+# Agens Pilot — chat demo
 
-A minimal Gradio chat UI that talks to an OpenAI-compatible **Agens Pilot 30B** endpoint.
+A minimal Gradio chat UI that talks to an OpenAI-compatible **Agens Pilot** endpoint.
 It does **not** run the model itself, so it works on a small CPU host.
 
 ## Configure (as secrets — never commit these)
@@ -20,7 +20,7 @@ It does **not** run the model itself, so it works on a small CPU host.
 |---|---|
 | `AGENS_BASE_URL` | `http://<host>:11116/v1` |
 | `AGENS_API_KEY` | your endpoint key |
-| `AGENS_MODEL` | `Agens Pilot 30B` |
+| `AGENS_MODEL` | `Agens Pilot` |
 
 ## Deploy
 
