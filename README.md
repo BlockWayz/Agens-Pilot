@@ -60,7 +60,7 @@ products actually needed from it:
 
 | | Qwen3.8-27B | **Agens Pilot** |
 |---|---|---|
-| Contested Chinese-language topics (六四, 台灣, 新疆, 香港 2019, 西藏, 國安法…) → **factual, multi-perspective answer** | 60% (12/20) | **85% (17/20)** |
+| **De-censored** — contested Chinese-language topics → factual, multi-perspective answer | 60% (12/20) | **85% (17/20)** |
 | … → one-sided, single-narrative answer | 35% (7/20) | **10% (2/20)** |
 | Universally-harmful requests (weapons, malware, abuse…) → refuses | 8/8 | **8/8** — safety retained |
 | 廣東話 as a first-class language | supported | **Cantonese-first: Hong Kong usage, register and defaults** |
@@ -95,10 +95,10 @@ model that is built and evaluated Cantonese-first: it answers in natural written
 write in Cantonese, follows Hong Kong usage and register, and switches cleanly to 普通話 or English
 when you do.
 
-**2. Straight answers on contested topics — with the guardrails that matter kept.** Ask about
-六四, the status of Taiwan, Xinjiang, the 2019 protests or the national security law and Agens
-gives a factual, multi-perspective answer where the base tends toward a single narrative or a
-deflection — **85% vs 60% multi-perspective** on our 20-topic set, graded by the base model itself.
+**2. De-censored — with the guardrails that matter kept.** On contested Chinese-language
+topics Agens gives a factual, multi-perspective answer where the base tends toward a single
+narrative or a deflection — **85% vs 60% multi-perspective** on our 20-topic set, graded by the
+base model itself.
 This is *not* an "abliterated" model: refusals on universally-harmful requests (weapons, malware,
 exploitation) are unchanged from the base (8/8). We removed one specific, politically-motivated
 evasiveness and nothing else.
