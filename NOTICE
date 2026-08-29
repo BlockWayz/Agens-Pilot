@@ -26,7 +26,7 @@ Alibaba Cloud and released under the Apache License, Version 2.0.
 Copyright 2026 Alibaba Cloud. The base model's architecture, tokenizer and
 pre-/post-trained weights are the work of the Qwen team; Blockway's
 contribution is the additional post-training described in the model card
-(Cantonese-first behaviour, balanced treatment of contested Chinese-language
-topics with universal safety retained, and agent-harness tuning).
+(Cantonese-first behaviour, balanced multi-perspective answers on complex
+questions with universal safety retained, and agent-harness tuning).
 Modifications to the original weights are indicated by this notice and the
 accompanying model card.
