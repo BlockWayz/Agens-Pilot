@@ -13,3 +13,20 @@ is provided in the accompanying LICENSE file and at:
 Unless required by applicable law or agreed to in writing, software distributed
 under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 CONDITIONS OF ANY KIND, either express or implied.
+
+------------------------------------------------------------------------------
+Third-party attribution
+------------------------------------------------------------------------------
+
+Agens Pilot is a fine-tune of Qwen3.8-27B, developed by the Qwen team at
+Alibaba Cloud and released under the Apache License, Version 2.0.
+
+    https://huggingface.co/Qwen/Qwen3.8-27B
+
+Copyright 2026 Alibaba Cloud. The base model's architecture, tokenizer and
+pre-/post-trained weights are the work of the Qwen team; Blockway's
+contribution is the additional post-training described in the model card
+(Cantonese-first behaviour, balanced treatment of contested Chinese-language
+topics with universal safety retained, and agent-harness tuning).
+Modifications to the original weights are indicated by this notice and the
+accompanying model card.
