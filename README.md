@@ -29,7 +29,7 @@ tags:
 </p>
 
 <p align="center">
-  <b>A Cantonese-native, straight-talking agent model — built on Qwen3.8-27B by <a href="https://blockway.io">Blockway</a>, Hong Kong</b><br>
+  <b>A Cantonese-first, balanced agent model — built on Qwen3.8-27B by <a href="https://blockway.io">Blockway</a>, Hong Kong</b><br>
   <i>Connecting technologies &amp; scenarios to create a trusted future</i>
 </p>
 
@@ -60,16 +60,15 @@ products actually needed from it:
 
 | | Qwen3.8-27B | **Agens Pilot** |
 |---|---|---|
-| **De-censored** — contested Chinese-language topics → factual, multi-perspective answer | 60% (12/20) | **85% (17/20)** |
-| … → one-sided, single-narrative answer | 35% (7/20) | **10% (2/20)** |
+| **Balanced** — complex historical & geopolitical questions → factual, multi-perspective answer | 60% (12/20) | **85% (17/20)** |
+| … → single-viewpoint answer | 35% (7/20) | **10% (2/20)** |
 | Universally-harmful requests (weapons, malware, abuse…) → refuses | 8/8 | **8/8** — safety retained |
 | 廣東話 as a first-class language | supported | **Cantonese-first: Hong Kong usage, register and defaults** |
 | Tuned for a first-party agent harness | — | **Claway** (live) · **Codeway** (soon) |
 
-<sub>Same 20 contested-topic prompts and 8 harmful prompts to both models, temperature 0.6, single run.
+<sub>Same 20 complex-question prompts and 8 harmful prompts to both models, temperature 0.6, single run.
 Balance graded by an independent judge — Qwen3.8-27B itself, thinking off, temperature 0 — on a
-0 / 1 / 2 rubric (deflects / one-sided / multi-perspective). Prompts, raw responses, judge script and
-scores: <code>materials/compare_agens_vs_base/</code>. Measured 2026-08-29. N is small; treat as
+0 / 1 / 2 rubric (non-answer / single viewpoint / multi-perspective). Judge script and aggregate scores: <code>materials/compare_agens_vs_base/</code>; the raw prompt set and responses are available on request. Measured 2026-08-29. N is small; treat as
 directional.</sub>
 
 Everything else — architecture, tokenizer, context length, vision — is Qwen3.8's, and on general
@@ -95,13 +94,11 @@ model that is built and evaluated Cantonese-first: it answers in natural written
 write in Cantonese, follows Hong Kong usage and register, and switches cleanly to 普通話 or English
 when you do.
 
-**2. De-censored — with the guardrails that matter kept.** On contested Chinese-language
-topics Agens gives a factual, multi-perspective answer where the base tends toward a single
-narrative or a deflection — **85% vs 60% multi-perspective** on our 20-topic set, graded by the
-base model itself.
-This is *not* an "abliterated" model: refusals on universally-harmful requests (weapons, malware,
-exploitation) are unchanged from the base (8/8). We removed one specific, politically-motivated
-evasiveness and nothing else.
+**2. Balanced perspectives — with the guardrails that matter kept.** On complex historical and
+geopolitical questions Agens presents the facts and multiple perspectives where the base tends
+toward a single viewpoint or a non-answer — **85% vs 60% multi-perspective** on our 20-question
+set, graded by the base model itself. Refusals on universally-harmful requests (weapons, malware,
+exploitation) are unchanged from the base (8/8).
 
 **3. An engine for our own agent harnesses.** Agens is trained and evaluated against the real
 workloads of **[Claway](https://claway.io)** (Blockway's Team-AI workforce, live) and **Codeway**
@@ -113,7 +110,7 @@ It runs anywhere OpenAI-compatible (sglang / vLLM), so you're never locked in.
 ## Highlights
 
 - 🗣️ **Cantonese-first** — written 廣東話 in, written 廣東話 out, with Hong Kong usage and register.
-- ⚖️ **Balanced, factual, non-evasive** on Chinese-language political and historical topics — 85% multi-perspective vs 60% for the base; universal safety intact.
+- ⚖️ **Balanced and factual** on complex historical and geopolitical questions — 85% multi-perspective vs 60% for the base; universal safety intact.
 - 🤖 **Agent-harness tuned** — Claway + Codeway.
 - ⚡ **Everything Qwen3.8-27B does** — strong coding (97.0 HumanEval, ~83 LiveCodeBench v6 on our harness), 1M context, vision, tool use.
 - 🧩 **Three official builds** — BF16 / FP8 / INT4, Apache-2.0.
@@ -195,7 +192,7 @@ print(processor.decode(out[0][inputs.input_ids.shape[1]:], skip_special_tokens=T
 
 ### The behaviours we changed (Agens vs. its base, same harness)
 
-See the table at the top. Full prompt set, raw responses and scorer: `materials/compare_agens_vs_base/`.
+See the table at the top. Judge script and aggregate scores: `materials/compare_agens_vs_base/`; raw prompt set and responses available on request.
 
 ### General capability (Blockway internal harness; single-sample, thinking on, temp 0.6)
 
@@ -221,19 +218,19 @@ adds nor removes general capability; it changes behaviour.
 ## Intended use
 
 - Cantonese-first assistants, customer-facing bots and internal tools for Hong Kong / Guangdong users.
-- Research, education and journalism that needs factual, multi-perspective answers on Chinese-language contested topics.
+- Research, education and journalism that needs factual, multi-perspective answers on complex questions.
 - Autonomous AI teammates and multi-step operations (Claway); agentic coding workflows (Codeway).
 - Everything Qwen3.8-27B is good at: coding, long-document work, vision-language tasks.
 
 **Use with care:** high-stakes decisions need human review; the model can make mistakes and
-should not be treated as an authoritative source on contested topics — verify facts.
+should not be treated as an authoritative source on complex questions — verify facts.
 
 ---
 
 ## Limitations
 
 - Cantonese behaviour is strongest for written 廣東話 as used in Hong Kong; other Yue varieties are less covered.
-- Balanced ≠ omniscient: on contested topics the model presents perspectives; it can still be wrong on specifics.
+- Balanced ≠ omniscient: on complex questions the model presents perspectives; it can still be wrong on specifics.
 - Internal benchmark numbers are conservative and not directly comparable to other harnesses.
 - Visual mathematics (MathVision) is the weakest capability axis, inherited from the base.
 - The **INT4** build can be slightly less consistent than FP8/BF16 on borderline factual topics.
@@ -251,7 +248,7 @@ their own compliance.
 
 ```bibtex
 @misc{agenspilot2026,
-  title  = {Agens Pilot: a Cantonese-native, non-evasive fine-tune of Qwen3.8-27B},
+  title  = {Agens Pilot: a Cantonese-first fine-tune of Qwen3.8-27B},
   author = {Blockway (BlockWay Link Limited)},
   year   = {2026},
   url    = {https://blockway.io/agens-pilot}
